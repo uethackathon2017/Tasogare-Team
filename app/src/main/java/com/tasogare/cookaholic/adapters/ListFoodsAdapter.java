@@ -1,6 +1,7 @@
 package com.tasogare.cookaholic.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +11,7 @@ import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 import com.tasogare.cookaholic.R;
+import com.tasogare.cookaholic.activities.FoodDetailActivity;
 
 import java.util.List;
 
@@ -38,7 +40,13 @@ public class ListFoodsAdapter extends RecyclerView.Adapter<ListFoodsAdapter.View
                 .load("http://toinayangi.vn/wp-content/uploads/2015/06/m%C3%B3n-%C4%83n-vi%E1%BB%87t-nam-n%E1%BB%95i-ti%E1%BA%BFng-b%C3%BAn-b%C3%B2-hu%E1%BA%BF.jpg")
                 .into(holder.mainImage);
         holder.costText.setText("20.000VND");
-
+        holder.foodLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(mContext, FoodDetailActivity.class);
+                mContext.startActivity(i);
+            }
+        });
     }
 
     @Override
@@ -51,6 +59,7 @@ public class ListFoodsAdapter extends RecyclerView.Adapter<ListFoodsAdapter.View
         @BindView(R.id.title_text) TextView titleText;
         @BindView(R.id.main_image) ImageView mainImage;
         @BindView(R.id.cost_text) TextView costText;
+        @BindView(R.id.food_layout) View foodLayout;
 
         ViewHolder(View itemView) {
             super(itemView);
