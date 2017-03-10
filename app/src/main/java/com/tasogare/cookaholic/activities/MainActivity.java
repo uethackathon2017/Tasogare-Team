@@ -1,7 +1,7 @@
 package com.tasogare.cookaholic.activities;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 
 import com.tasogare.cookaholic.R;
 

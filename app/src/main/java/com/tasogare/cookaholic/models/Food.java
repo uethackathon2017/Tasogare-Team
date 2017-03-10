@@ -3,9 +3,10 @@ package com.tasogare.cookaholic.models;
 import com.raizlabs.android.dbflow.annotation.Column;
 import com.raizlabs.android.dbflow.annotation.PrimaryKey;
 import com.raizlabs.android.dbflow.annotation.Table;
+import com.raizlabs.android.dbflow.structure.BaseModel;
 
 @Table(database = AppDatabase.class, name = "foods")
-public class Food{
+public class Food extends BaseModel {
     @PrimaryKey
     int id;
 
